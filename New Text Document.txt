@@ -1,11 +1,22 @@
-helo ahhshhsdhdhd
+package ca2mateusveloso;
 
-duhfuduhf
+public class CA2MateusVeloso {
 
-test4
+    String name;
+    String email;
+     int empNum;
 
-test 5
+    public CA2MateusVeloso(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 
-test 6
+    public static void main(String[] args) {
 
-test 7
+        CA2MateusVeloso employee = new CA2MateusVeloso("John Doe", "john@example.com");
+
+
+        System.out.println("Name: " + employee.name);
+        System.out.println("Email: " + employee.email);
+    }
+}
