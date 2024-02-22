@@ -4,7 +4,12 @@ public class CA2MateusVeloso {
 
     String name;
     String email;
-     int empNum;
+    int empNum;
+
+    public CA2MateusVeloso() {
+        this.name = "John Doe";
+        this.email = "john@example.com";
+    }
 
     public CA2MateusVeloso(String name, String email) {
         this.name = name;
@@ -13,11 +18,9 @@ public class CA2MateusVeloso {
 
     public static void main(String[] args) {
 
-        CA2MateusVeloso employee = new CA2MateusVeloso("John Doe", "john@example.com");
+        CA2MateusVeloso defaultEmployee = new CA2MateusVeloso();
 
 
-        System.out.println("Name: " + employee.name);
-        System.out.println("Email: " + employee.email);
+        CA2MateusVeloso parametersEmployee = new CA2MateusVeloso("Jane Doe", "jane@example.com");
     }
 }
-
