@@ -51,17 +51,22 @@ public class Employee { //can be accessed outside the package since its public.
     
 }
 
-public class EmployeeTest{
+class EmployeeTest{
 
     public static void main (String[] args){
     
-    Employee joeBloggs = new Employee ("Joe Bloggs", "jb@gmail.com");
-    Employee annBanana = new Employee ("Ann Banana", "ab@gmail.com");
-    Employee tomThumb = new Employee ("Tom Thumb", "tt@gmail.com");
-            
-    
-    }
+        Employee[] projectGroup = new Employee[3]; // Declare an array to store 3 Employee objects
 
+            projectGroup[0] = new Employee("Joe Bloggs", "jb@gmail.com");
+            projectGroup[1] = new Employee("Ann Banana", "ab@gmail.com");
+            projectGroup[2] = new Employee("Tom Thumb", "tt@gmail.com");
+            
+            System.out.println("Next Employee Number: " + Employee.nextEmpNum);
+            
+    }
+    
+    
+    
 }
 
     
