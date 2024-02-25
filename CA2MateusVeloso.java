@@ -25,6 +25,17 @@ public class Employee {
     public String getName(){
         return name;
     }
+    
+    public String getEmail(){
+        
+        if (email.length() > 3) {
+        } 
+        return email;
+    }
+    
+    public int getEmpNum(){
+        return empNum;
+    }
 
     public static void main(String[] args) {
 
