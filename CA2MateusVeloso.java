@@ -1,26 +1,26 @@
 package ca2mateusveloso;
 
-public class CA2MateusVeloso {
+public class Employee {
 
     String name;
     String email;
     int empNum;
 
-    public CA2MateusVeloso() {
+    public Employee() {
         this.name = "John Doe";
         this.email = "john@example.com";
     }
 
-    public CA2MateusVeloso(String name, String email) {
+    public Employee(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
     public static void main(String[] args) {
 
-        CA2MateusVeloso defaultEmployee = new CA2MateusVeloso();
+        Employee defaultEmployee = new Employee();
 
 
-        CA2MateusVeloso parametersEmployee = new CA2MateusVeloso("Jane Doe", "jane@example.com");
+        Employee parametersEmployee = new Employee("Jane Doe", "jane@example.com");
     }
 }
