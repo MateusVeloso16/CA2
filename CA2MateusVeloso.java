@@ -1,6 +1,6 @@
 package ca2mateusveloso;
 
-public class Employee {
+public class Employee { //can be accessed outside the package since its public.
 
     String name;
     String email;
@@ -12,9 +12,8 @@ public class Employee {
         this.name = "John Doe";
         this.email = "john@example.com";
         this.empNum = nextEmpNum++;
-
     }
-
+     
     public Employee(String name, String email) {
         this.name = name;
         this.email = email;
@@ -33,8 +32,8 @@ public class Employee {
         return email;
     }
     
-    public int getEmpNum(){
-        return empNum;
+    public int getNextEmpNum(){
+        return nextEmpNum;
     }
 
     public static void main(String[] args) {
@@ -43,5 +42,26 @@ public class Employee {
 
 
         Employee parametersEmployee = new Employee("Jane Doe", "jane@example.com");
+        
+        
+        
     }
+    
+    
+    
 }
+
+public class EmployeeTest{
+
+    public static void main (String[] args){
+    
+    Employee joeBloggs = new Employee ("Joe Bloggs", "jb@gmail.com");
+    Employee annBanana = new Employee ("Ann Banana", "ab@gmail.com");
+    Employee tomThumb = new Employee ("Tom Thumb", "tt@gmail.com");
+            
+    
+    }
+
+}
+
+    
