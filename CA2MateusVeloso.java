@@ -23,7 +23,6 @@ public class Employee {
 
     public String getEmail(){
         if (email.length() > 3) {
-            // Add your logic here if needed
         }
         return email;
     }
@@ -33,22 +32,24 @@ public class Employee {
     }
 
     public static void main(String[] args) {
-        // Creating an Employee object using the default constructor
+        
         Employee employee = new Employee();
 
-        // Printing details of the employee
         System.out.println("Employee: " + employee.getName() + ", " + employee.getEmail());
         System.out.println(Employee.nextEmpNum);
 
-        // Creating an instance of the inner class
         EmployeeTest employeeTest = employee.new EmployeeTest();
 
-        // Invoking the main method of the inner class
         employeeTest.main(args);
+        
+        Company company = new Employee().new Company();
+        company.main(args);
+        
     }
 
-    // Inner class EmployeeTest
+    
     class EmployeeTest {
+        
         public void main(String[] args) {
             Employee[] projectGroup = new Employee[3];
 
@@ -72,22 +73,39 @@ public class Employee {
     }
     
     class Company {
-
-        Company(String joe_Bloggs, String jbgmailcom) {
+        
+        String companyName = "Gnomes Ltd";
+        String name;
+        String email;
+        
+        public Company() {
+            this("Gnomes Ltd", "123@gmail.com");
         }
-    
-    String companyName = "Gnomes Ltd";
+        
+        public Company(String name) {
+            this(name, "123@gmail.com");
+        }
+        
+        public Company(String name, String email) {
+            this.name = name;
+            this.email = email;
+        }
+       
     
         public void main(String[] args) {
         
-        Company [] staff = new Company [3];
+            Company [] staff = new Company [3];
         
-        staff[0] = new Company("Joe Bloggs", "jb@gmail.com");
-        staff[1] = new Company("Ann Banana", "ab@gmail.com");
-        staff[2] = new Company("Tom Thumb", "tt@gmail.com");
-        
+            staff[0] = new Company("Joe Bloggs", "jb@gmail.com");
+            staff[1] = new Company("Ann Banana", "ab@gmail.com");
+            staff[2] = new Company("Tom Thumb", "tt@gmail.com");
+
+            for (int i = 0; i < staff.length; i++) {
+                System.out.println("Company " + (i+1) + ":");
+                System.out.println("Name: " + staff[i].name);
+                System.out.println("Email: " + staff[i].email);
+                System.out.println();
+            }
         }
-    
     }
-    
 }
