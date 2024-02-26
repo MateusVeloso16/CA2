@@ -23,6 +23,7 @@ public class Employee {
 
     public String getEmail(){
         if (email.length() > 3) {
+            // Add your logic here if needed
         }
         return email;
     }
@@ -32,16 +33,21 @@ public class Employee {
     }
 
     public static void main(String[] args) {
+        // Creating an Employee object using the default constructor
         Employee employee = new Employee();
 
+        // Printing details of the employee
         System.out.println("Employee: " + employee.getName() + ", " + employee.getEmail());
         System.out.println(Employee.nextEmpNum);
 
+        // Creating an instance of the inner class
         EmployeeTest employeeTest = employee.new EmployeeTest();
 
+        // Invoking the main method of the inner class
         employeeTest.main(args);
     }
 
+    // Inner class EmployeeTest
     class EmployeeTest {
         public void main(String[] args) {
             Employee[] projectGroup = new Employee[3];
@@ -64,4 +70,24 @@ public class Employee {
             }
         }
     }
+    
+    class Company {
+
+        Company(String joe_Bloggs, String jbgmailcom) {
+        }
+    
+    String companyName = "Gnomes Ltd";
+    
+        public void main(String[] args) {
+        
+        Company [] staff = new Company [3];
+        
+        staff[0] = new Company("Joe Bloggs", "jb@gmail.com");
+        staff[1] = new Company("Ann Banana", "ab@gmail.com");
+        staff[2] = new Company("Tom Thumb", "tt@gmail.com");
+        
+        }
+    
+    }
+    
 }
