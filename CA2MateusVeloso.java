@@ -1,5 +1,8 @@
 package ca2mateusveloso;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Employee {
 
     String name;
@@ -77,6 +80,7 @@ public class Employee {
         String companyName = "Gnomes Ltd";
         String name;
         String email;
+        ArrayList<Employee> staff = new ArrayList<>();
         
         public Company() {
             this("Gnomes Ltd", "123@gmail.com");
@@ -90,20 +94,41 @@ public class Employee {
             this.name = name;
             this.email = email;
         }
+        
+        public void addNewStaff(String name, String email) {
+            Employee employee = new Employee(name, email);
+            staff.add(employee);
+        }
+        
+        public int getStaffNumber() {
+            return staff.size();
+        }
+        
+        public void listEmployees(int empNumGiv) {
+            Iterator<Employee> iterator = staff.iterator();
+            System.out.println("Employees with Employee Number > " + empNumGiv + ":");
+                while (iterator.hasNext()) {
+                    Employee employee = iterator.next();
+                if (employee.getEmpNum() > empNumGiv) {
+                    System.out.println(employee.getName());
+            }
+        }
+    }
+        
        
     
         public void main(String[] args) {
         
-            Company [] staff = new Company [3];
+            Company [] staffGnomeo = new Company [3];
         
-            staff[0] = new Company("Joe Bloggs", "jb@gmail.com");
-            staff[1] = new Company("Ann Banana", "ab@gmail.com");
-            staff[2] = new Company("Tom Thumb", "tt@gmail.com");
+            staffGnomeo[0] = new Company("Joe Bloggs", "jb@gmail.com");
+            staffGnomeo[1] = new Company("Ann Banana", "ab@gmail.com");
+            staffGnomeo[2] = new Company("Tom Thumb", "tt@gmail.com");
 
-            for (int i = 0; i < staff.length; i++) {
+            for (int i = 0; i < staffGnomeo.length; i++) {
                 System.out.println("Company " + (i+1) + ":");
-                System.out.println("Name: " + staff[i].name);
-                System.out.println("Email: " + staff[i].email);
+                System.out.println("Name: " + staffGnomeo[i].name);
+                System.out.println("Email: " + staffGnomeo[i].email);
                 System.out.println();
             }
         }
