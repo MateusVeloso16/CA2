@@ -38,7 +38,6 @@ public class Employee {
         return empNum;
     }
 
-    
     // https://github.com/MateusVeloso16/CA2.git GITHUB-MATEUS VELOSO sba23162
     public static void main(String[] args) {
 
@@ -232,6 +231,18 @@ public class Employee {
                 System.out.println("Email: " + staffGnomeo.get(i).email);
                 System.out.println();
             }
+        }
+
+        public void removeStaff(int empNum) {
+            Iterator<Employee> iterator = staff.iterator();
+            while (iterator.hasNext()) {
+                Employee employee = iterator.next();
+                if (employee.getEmpNum() == empNum) {
+                    iterator.remove();
+                    return;
+                }
+            }
+            
         }
 
     }
