@@ -64,15 +64,20 @@ public class Employee {
             for (int i = 0; i < projectGroup.length; i++) {
                 System.out.println("Employee " + (i+1) + ": " + projectGroup[i].getName() + ", " + projectGroup[i].getEmail());
             }
+            
+            System.out.println();
+            System.out.println("Next employee number: " + nextEmpNum);
+            System.out.println();
 
-            int m = 0;
-
-            System.out.println("Employees with Employee Number > " + m + ":");
+            int m = 4;
+            //System.out.println("Employees with Employee Number > " + m + ":");
             for (Employee employee : projectGroup) {
                 if (employee.getEmpNum() > m) {
                     System.out.println(employee.getName());
+                    
                 }
             }
+            System.out.println();
         }
     }
     
