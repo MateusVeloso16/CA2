@@ -197,17 +197,20 @@ public class Employee {
     
         public void main(String[] args) {
         
-            Company [] staffGnomeo = new Company [3];
-        
-            staffGnomeo[0] = new Company("Joe Bloggs", "jb@gmail.com");
-            staffGnomeo[1] = new Company("Ann Banana", "ab@gmail.com");
-            staffGnomeo[2] = new Company("Tom Thumb", "tt@gmail.com");
+            ArrayList<Company> staffGnomeo = new ArrayList<>();
 
-            for (int i = 0; i < staffGnomeo.length; i++) {
-                System.out.println("Company " + (i+1) + ":");
-                System.out.println("Name: " + staffGnomeo[i].name);
-                System.out.println("Email: " + staffGnomeo[i].email);
-                System.out.println();
+        staffGnomeo.add(new Company("Joe Bloggs", "jb@gmail.com")); //testing content
+        staffGnomeo.add(new Company("Ann Banana", "ab@gmail.com")); //testing content
+        staffGnomeo.add(new Company("Tom Thumb", "tt@gmail.com")); //testing content
+        staffGnomeo.add(new Company("John Doe", "jd@gmail.com")); //testing content
+        staffGnomeo.add(new Company("Jane Smith", "js@gmail.com")); //testing content
+
+
+        for (int i = 0; i < staffGnomeo.size(); i++) {
+            System.out.println("Company " + (i + 1) + ":");
+            System.out.println("Name: " + staffGnomeo.get(i).name);
+            System.out.println("Email: " + staffGnomeo.get(i).email);
+            System.out.println();
             }
         }
             
