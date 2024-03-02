@@ -2,6 +2,7 @@
 package ca2mateusveloso;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -92,6 +93,7 @@ public class Employee {
         String managerUsername;
         String managerPassword;
         ArrayList<Employee> staff = new ArrayList<>();
+        HashSet<Integer> staffSet = new HashSet<>();
 
         class ConsoleMenu {
 
@@ -117,8 +119,9 @@ public class Employee {
                         System.out.println("1- Acess staff");
                         System.out.println("2- Adicionar new staff");
                         System.out.println("3- Leave page");
+                        System.out.println("4- Remove Employee");
 
-                        System.out.print("Select your option from 1 to 3: ");
+                        System.out.print("Select your option from 1 to 4: ");
                         int choice = scanner.nextInt();
 
                         switch (choice) {
@@ -137,6 +140,11 @@ public class Employee {
                             case 3:
                                 System.out.println("Leaving");
                                 loggedIn = false;
+                                break;
+                            case 4:
+                                System.out.print("Enter the employee number to remove: ");
+                                int empNumToRemove = scanner.nextInt();
+                                removeEmployee(empNumToRemove);
                                 break;
                             default:
                                 System.out.println("Wrong. Select from 1 to 3.");
@@ -196,7 +204,12 @@ public class Employee {
 
         public void addNewStaff(String name, String email) {
             Employee employee = new Employee(name, email);
-            staff.add(employee);
+            if (!staffSet.contains(employee.getEmpNum())) {
+                staff.add(employee);
+                staffSet.add(employee.getEmpNum());
+            } else {
+                System.out.println("Employee with empNum " + employee.getEmpNum() + " is already being use.");
+            }
         }
 
         public int getStaffNumber() {
@@ -239,10 +252,15 @@ public class Employee {
                 Employee employee = iterator.next();
                 if (employee.getEmpNum() == empNum) {
                     iterator.remove();
+                    staffSet.remove(empNum);
                     return;
                 }
             }
-            
+            System.out.println("Employee with empNum " + empNum + " not found.");
+        }
+
+        public void removeEmployee(int empNum) {
+            this.removeStaff(empNum);
         }
 
     }
